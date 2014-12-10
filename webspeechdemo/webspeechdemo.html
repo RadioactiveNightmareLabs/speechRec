@@ -3,21 +3,12 @@
   <title>Speech</title>
 </head>
 <body>
-<h2>Web Speech API Demo</h2>
-
-<p>Allow the mic and start speaking! Just say which link you want to go to. (Like "home").</p>
-<p>You need a little patience as the info has to be relayed to a server... Only works in Chrome</p>
-
-<nav>
-  <a href="https://www.google.com" data-word="home">Home</a>
-  <a href="about-me" data-word="about">About</a>
-  <a href="portfolio" data-word="work">Work</a>
-  <a href="contact" data-word="contact">Contact</a>
-</nav>
+<h2>Speech</h2>
 
 <p>Latest word the API thinks you just said: <strong id="latest-word"></strong></p>
 <div>
   <button type="button" onclick="recognition.start();">Speak</button>
+  <button type="button" onclick="recognition.stop();">Stop</button>
 </div>
 <script type="text/javascript" src="speech.js"></script>
 

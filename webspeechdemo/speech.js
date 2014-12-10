@@ -1,5 +1,3 @@
-// get navigation links
-var allLinks = document.getElementsByTagName('a');
 // get last word said element
 var strongEl = document.getElementById('latest-word');
 
@@ -12,6 +10,9 @@ recognition.interimResults = true;
 
 recognition.onresult = function(event){
 
+  //test output event results
+  console.log(event.results);
+
   // delve into words detected results & get the latest
   // total results detected
   var resultsLength = event.results.length -1 ;
@@ -20,20 +21,6 @@ recognition.onresult = function(event){
   // get last word detected
   var saidWord = event.results[resultsLength][ArrayLength].transcript;
 
-  // loop through links and match to word spoken
-  for (i=0; i<allLinks.length; i++) {
-
-    // get the word associated with the link
-    var dataWord = allLinks[i].dataset.word;
-
-    // if word matches chenge the colour of the link
-    if (saidWord.indexOf(dataWord) != -1) {
-      allLinks[i].style.color = 'red';
-    }
-  }
-
-  // append the last word to the bottom sentence
-  strongEl.innerHTML = saidWord;
   console.log(saidWord);
   console.log(new Date());
 }
